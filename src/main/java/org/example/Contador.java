@@ -13,16 +13,20 @@ public class Contador {
         int segundoParametro = terminal.nextInt();
 
         try {
+            contar(primeiroParametro, segundoParametro);
+        } catch (ParametrosInvalidosException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
-        } catch () {
+    static void contar(int primeiroParametro, int segundoParametro) throws ParametrosInvalidosException {
+        if (primeiroParametro > segundoParametro) {
+            throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
         }
 
-    }
-    static void contar(int primeiroParametro, int segundoParametro) throws ParametrosInvalidosException {
-        //validar se parametroUm é MAIOR que parametroDois e lançar a exceção
         int contagem = segundoParametro - primeiroParametro;
-        //realizar o for para imprimir os números com base na variável contagem
-
-
+        for (int i = 1; i <= contagem; i++) {
+            System.out.println("Imprimindo o número " + (primeiroParametro + i - 1));
+        }
     }
 }

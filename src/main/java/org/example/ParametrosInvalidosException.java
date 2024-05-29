@@ -1,6 +1,7 @@
 package org.example;
 
-public class ParametrosInvalidosException extends Throwable {
-    public static void main(String[] args) {
+public class ParametrosInvalidosException extends Exception {
+    public ParametrosInvalidosException(String message) {
+        super(message);
     }
 }
